@@ -1,47 +1,40 @@
 'use strict';
 
-document.querySelector('button').addEventListener('click',() => {
-  const textf = document.getElementById('Fizz').value;
-  const textb = document.getElementById('Buzz').value;
-  let parent = document.querySelector('div');
+document.getElementById('Run').addEventListener('click',() => {
+  const FizzText = document.getElementById('Fizz').value;
+  const BuzzText = document.getElementById('Buzz').value;
+  const parent = document.getElementById('OutputParent');
   while(parent.lastChild){
     parent.removeChild(parent.lastChild);
   }
-  if(isNaN(textf)){  
-   let New = document.createElement('p');
-   New.textContent = '整数値を入力してください';
-   let div  = document.querySelector('div');
-   div.appendChild(New);
-   return false;
-  } else if (isNaN(textb)){ 
-     let New = document.createElement('p');
-     New.textContent = '整数値を入力してください';
-     let div  = document.querySelector('div');
-     div.appendChild(New);
-     return false;
-  } else if ((textf == "" )||textb == ""){
-     let New = document.createElement('p');
-     New.textContent = '整数値を入力してください';
-     let div  = document.querySelector('div');
-     div.appendChild(New);
-    return false;
-  }
-  for(let i = 1 ; i <100 ; i++){
-   if( i % textf === 0 && i% textb === 0){
-    let New = document.createElement('p');
-    New.textContent = `FizzBuzz${i}`;
-    let div  = document.querySelector('div');
-    div.appendChild(New);
- } else if(i % textf === 0){
-    let New = document.createElement('p');
-    New.textContent = `Fizz${i}`; 
-    let div  = document.querySelector('div');
-    div.appendChild(New);
- } else if(i % textb === 0){
-    let New = document.createElement('p');
-    New.textContent = `Buzz${i}`; 
-    let div  = document.querySelector('div');
-    div.appendChild(New);
- }
- }
+
+  const isFizzInteger = Number.isInteger(FizzText);
+  console.log(isFizzInteger);
 });
+//   if(isFizzInteger && isBuzzInteger){  
+//      for(let i = 1 ; i <100 ; i++){
+//         if( i % FizzText === 0 && i% BuzzText === 0){
+//            let New = document.createElement('p');
+//            New.textContent = `FizzBuzz${i}`;
+//            let div  = document.getElementById('OutputParent');
+//            div.appendChild(New);
+//          } else if(i % FizzText === 0){
+//             let New = document.createElement('p');
+//             New.textContent = `Fizz${i}`; 
+//             let div  = document.getElementById('OutputParent');
+//             div.appendChild(New);
+//          } else if(i % BuzzText === 0){
+//             let New = document.createElement('p');
+//             New.textContent = `Buzz${i}`; 
+//             let div  = document.getElementById('OutputParent');
+//             div.appendChild(New);
+//          }
+//       }
+//     } else { 
+//    let New = document.createElement('p');
+//    New.textContent = '整数値を入力してください';
+//    let div  = document.getElementById('OutputParent');
+//    div.appendChild(New);
+//    return false;
+//    }
+// });
