@@ -11,36 +11,30 @@ document.getElementById('Run').addEventListener('click',() => {
   const isFizzInteger = Number.isInteger(Number(FizzText));
   const isBuzzInteger = Number.isInteger(Number(BuzzText));
 
-  if (FizzText==="" || BuzzText === "") { 
-    const New = document.createElement('p');
-    New.textContent = '整数値を入力してください';
+  if (FizzText === "" || BuzzText === ""|| !isFizzInteger || !isBuzzInteger) { 
+    const addition = document.createElement('p');
+    addition.textContent = '整数値を入力してください';
     const div  = document.getElementById('outputParent');
-    div.appendChild(New);
+    div.appendChild(addition);
     return false;
   } else if (isFizzInteger && isBuzzInteger){  
      for (let i = 1 ; i <100 ; i++) {
         if ( i % FizzText === 0 && i% BuzzText === 0) {
-           const New = document.createElement('p');
-           New.textContent = `FizzBuzz${i}`;
+           const addition = document.createElement('p');
+           addition.textContent = `FizzBuzz${i}`;
            const div  = document.getElementById('outputParent');
-           div.appendChild(New);
+           div.appendChild(addition);
          } else if (i % FizzText === 0) {
-            const New = document.createElement('p');
-            New.textContent = `Fizz${i}`; 
+            const addition = document.createElement('p');
+            addition.textContent = `Fizz${i}`; 
             const div  = document.getElementById('outputParent');
-            div.appendChild(New);
+            div.appendChild(addition);
          } else if (i % BuzzText === 0) {
-            const New = document.createElement('p');
-            New.textContent = `Buzz${i}`; 
+            const addition = document.createElement('p');
+            addition.textContent = `Buzz${i}`; 
             const div  = document.getElementById('outputParent');
-            div.appendChild(New);
+            div.appendChild(addition);
          }
       }
-   } else { 
-   const New = document.createElement('p');
-   New.textContent = '整数値を入力してください';
-   const div  = document.getElementById('outputParent');
-   div.appendChild(New);
-   return false;
-   }
+   } 
 });
